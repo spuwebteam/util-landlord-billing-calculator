@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="style.css"rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-1.7.1.min.js" integrity="sha256-iBcUE/x23aI6syuqF7EeT/+JFBxjPs5zeFJEXxumwb0=" crossorigin="anonymous"></script>
+<script src="http://www.seattle.gov/util/warp/Scripts/jquery-ui-1.8.11.min.js"></script>
+<script src="script.js"></script>
+
+<title>Partial Billing Cycle Calculator</title>
+</head>
+<body>
+<h1>Partial Billing Calculator</h1>
+
+
+<div class="helpModal">
+	<div class="modalContent">
+		<button><span>close</span></button>
+		<div class="imageContainer">
+			<img class="step1" src="http://spuwebdev/guanlaj/partial/total.png" />
+			<img class="step2" src="http://spuwebdev/guanlaj/partial/duration.png" />
+		</div>
+		<span class="caption step2">This is the amount of days between these 2 dates.</span>
+	</div>
+</div>
+<section id="partialBillingCalculator">
+	<div class="progressBar">
+		<div class="steps">
+			<span class='stepIndicator'></span>
+			<span class="step" data-step="step1">Step 1</span>
+			<span class="step" data-step="step2">Step 2</span>
+			<span class="step" data-step="step3">Step 3</span>
+			<span class="step" data-step="stepTotal">Est. Bill</span>
+		</div>
+	</div>
+	<div class="stepWrapper">
+		<div class="steps">
+			<div id="step1" class="step">
+				<div class="stepHeader">
+					<button class="previous">
+						<i class="material-icons">arrow_back</i>
+					</button>
+					<h2>Step 1</h2>
+				</div>
+				<div class="stepBody">
+					<p class="instructions">
+						Please enter the total amount due
+						<button class="help">
+							<span class="sr-only">help</span>
+							<span>?</span>
+						</button>
+					</p>
+					<div class="errorWrapper">
+						<span class="errorMessage"></span>
+					</div>
+					<div class="formElements">
+						<label for="totalDue">Total Amount Due</label>
+						<span class="unit">$</span>
+						<input id="totalDue" type="text" placeholder="0.0" />
+						<button class="next">
+							<span>next</span>
+							<i class="material-icons" hidden>chevron_right</i>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div id="step2" class="step">
+				<div class="stepHeader">
+					<button class="previous">
+						<i class="material-icons">arrow_back</i>
+					</button>
+					<h2>Step 2</h2>
+				</div>
+				<div class="stepBody">
+					<p class="instructions">
+						Please enter the total days of service
+						<button class="help">
+							<span class="sr-only">help</span>
+							<span>?</span>
+						</button>
+					</p>
+					<div class="errorWrapper">
+						<span class="errorMessage"></span>
+					</div>
+					<div class="formElements">	
+						<label for="serviceDays">Total Days of Service</label>
+						<input id="serviceDays" type="text" placeholder="0"  />
+
+						<button class="next">
+							<span>next</span>
+							<i class="material-icons" hidden>chevron_right</i>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div id="step3" class="step">
+				<div class="stepHeader">
+					<button class="previous">
+						<i class="material-icons">arrow_back</i>
+					</button>
+					<h2>Step 3</h2>
+				</div>
+				<div class="stepBody">
+					<p class="instructions">
+						How many days did your tenant stay?
+						<!--
+						<button class="help">
+							<span class="sr-only">help</span>
+							<span>?</span>
+						</button>
+						-->
+					</p>
+					<div class="errorWrapper">
+						<span class="errorMessage"></span>
+					</div>
+					<div class="formElements">
+						<label for="partialDays">Number of Days in Partial</label>
+						<input id="partialDays" type="text" placeholder="0"  />
+						<button class="next">
+							<span>next</span>
+							<i class="material-icons" hidden>chevron_right</i>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div id="stepTotal" class="step">
+				<div class="stepHeader">
+					<button class="previous">
+						<i class="material-icons">arrow_back</i>
+					</button>
+					<h2>Estimation</h2>
+				</div>
+				<div class="stepBody">
+					<p class="instructions">The estimated partial bill is:
+					</p>
+					<span class="amountDue"></span>
+					<button class="reset">
+						<span>reset</span>
+						<i class="material-icons" hidden>refresh</i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> 
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+h1 {
+	font-family: 'Roboto';
+	font-weight:100;
+	font-size:40px;
+}
+
+.sr-only{
+	position:absolute;
+	width:1px;
+	height:1px;
+	background:transparent;
+	display: block;
+	overflow: hidden;
+}
+
+#partialBillingCalculator{
+	max-width:580px;
+	position:relative;
+}
+.progressBar{
+	font-family: 'Roboto';
+	background:#000;
+	color:#fff;
+	margin-bottom:0px;
+	padding:10px 0px;
+	overflow:hidden;
+}
+.progressBar .stepIndicator{
+	background:;
+	position:absolute;
+	bottom:0px;
+	width:25%;
+	height:4px;
+	left:0%;
+	transition:all .6s;
+}
+.progressBar .stepIndicator:after{
+	content:'';
+	display:block;
+	background:#4CAF50;
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+
+.progressBar .step{
+	width:25%;
+	color:#ccc;
+	padding:4px 0px;
+	display:block;
+	float:left;
+	text-align:center;
+	position:relative;
+	transition:all 2s;
+	font-size:12pt;
+}
+.progressBar .step.active{
+	font-weight: bold;
+	color:#fff;
+}
+.progressBar .NOstep:after{
+	margin-left:-55px;
+	position:absolute;
+	width:150px;
+	content:'aa ';
+	display:inline-block;
+	border-top:2px solid #ccc;
+     -moz-transform: rotate(90deg);  
+       -o-transform: rotate(45deg);  
+  -webkit-transform: rotate(45deg);  
+      -ms-transform: rotate(45deg);  
+          transform: rotate(120deg); 
+}
+.progressBar .step:last-child:after{
+display:none;
+}
+.stepWrapper{
+	position:relative;
+}
+.stepWrapper .step {
+	margin-bottom:20px;
+	box-shadow:0px 1px 5px rgba(0,0,0,0.5);
+	position:absolute;
+	width:100%;
+	background:#fff;
+}
+	.stepWrapper .step button{
+		cursor:pointer;
+	}
+	.stepWrapper .step .stepHeader{
+		/background:#673AB7;
+		background:#333;	
+		padding:10px;
+		display:none;
+	}
+	.stepWrapper .step .stepHeader button.previous {
+		float: left;
+		border: 0px;
+		width: 40px;
+		height:40px;
+		line-height:44px;
+		font-size:22pt;
+		margin: -8px 15px 0px -8px;
+		background:transparent;
+		color:#fff;
+		cursor:pointer;
+		border-right:1px solid #555;
+	}
+	.stepWrapper .step .stepHeader button.previous:hover {
+		background:#fff;
+		color:#673AB7;
+	}
+	.stepWrapper .step .stepHeader h2 {
+		font-family: 'Roboto';
+		font-weight: 400;
+		font-size: 20px;
+		color:#fff;
+		margin:0px;
+	}
+		.stepWrapper .step#stepWelcome .stepHeader h2 {
+			margin-left:10px;
+		}
+	.stepWrapper .stepBody{
+		padding:1px 20px 20px 20px;
+		border-top:0px;
+	}
+	.stepWrapper .stepBody .formElements{
+		display:flex;
+	}
+	.stepWrapper .step .instructions {
+		font-family: 'Roboto';
+		font-size: 15pt;
+		font-weight:300;
+		color:#000;
+	}
+	.stepWrapper .step .errorWrapper {
+		display:none;
+		margin:-15px 0px 10px 0px;
+	}
+	.stepWrapper .step .errorWrapper .errorMessage {
+		display:inline-block;
+		font-family: 'Roboto';
+		font-size: 11pt;
+		font-weight:500;
+		color:#B71C1C;
+		border:1px solid;
+		padding:3px 10px 3px 33px;
+		margin-right:100px;
+	}
+	.stepWrapper .step .errorWrapper .errorMessage:before {
+		content:'!';
+		background:#B71C1C;
+		color:#fff;
+		display:inline-block;
+		position:absolute;
+		padding:3px 10px;
+		margin:-3px -33px;
+	}	
+	.stepWrapper .step label {
+		width: 1px;
+		height: 1px;
+		display: block;
+		position: absolute;
+		overflow: hidden;
+	}
+	.stepWrapper .step input {
+		height: 24px;
+		padding: 6px 12px;
+		font-size: 14px;
+		line-height: 1.42857143;
+		color: #000;
+		background-color: #fff;
+		background-image: none;
+		border:0px;
+		border-bottom: 2px solid #666;
+		border-radius: 0px;
+		width:100%;
+		font-size:20px;
+		margin-right:22px;
+	}
+		#totalDue{
+	    	padding-left:15px;
+		}
+	.stepWrapper .step button.help {
+		border: 0px;
+		width: 24px;
+		height: 24px;
+		line-height:24px;
+		font-size:15px;
+		font-weight:bold;
+		text-align:center;
+		color: #fff;
+		background: #ccc;
+		display:inline-block;
+		border-radius:50px;
+		margin-left:5px;
+	}
+	.stepWrapper .step button.help:hover {
+		background:#000;
+	}
+
+	.stepWrapper .step button.next,
+	.stepWrapper .step button.reset  {
+		height:40px;
+		width:110px;
+		border:0px;
+		padding:0px 10px 0px 13px;
+		clear:both;
+		border-radius:2px;
+		background:#039BE5;
+		color:#fff;
+		box-shadow:0px 1px 1px rgba(0,0,0,.75);
+	}
+	.stepWrapper .step button.reset  {
+	    float: right;
+	    margin-top: 15px;
+	    background: #333;
+	    width: 100px;
+	}
+
+	.stepWrapper .step button.next:hover,
+	.stepWrapper .step button.reset:hover {
+		background:#0277BD;
+	}
+		.stepWrapper .step button.next *,
+		.stepWrapper .step button.reset *{
+		    height:40px;
+            line-height: 40px;
+            display:block;
+		}
+		.stepWrapper .step button.next span,
+		.stepWrapper .step button.reset span{
+            float:left;
+            font-size:18px;
+		}
+		.stepWrapper .step button.next i,
+		.stepWrapper .step button.reset i {
+            float:right;
+		}
+
+#step1 {
+
+}
+
+#step2 {
+
+}
+
+#step3 {
+
+}
+
+
+#step2,
+#step3,
+#stepTotal {
+display:none;
+}
+
+
+.unit{
+ position:absolute;
+ height:24px;
+ font-family:'Roboto';
+ font-size:20px;
+ color:#777;
+ margin-top:5px;
+}
+
+.amountDue{
+ font-family:'Roboto';
+ font-size:36pt;
+ font-weight:700;
+ color:#43A047;
+}
+
+
+
+.helpModal{
+display:none;
+position:absolute;
+background:rgba(0,0,0,0.75);
+width:100%;
+height:100%;
+top:0px;
+left:0px;
+z-index:30;
+text-align:center;
+}
+
+.modalContent{
+background:#000;
+margin:10% auto;
+position:relative;
+border:2px solid #000;
+display:inline-block;
+box-shadow: 0px 1px 20px rgba(0,0,0,0.75);
+}
+@media (min-width:768px){
+	.modalContent{
+	max-width:75%;
+	}
+}
+.modalContent button{
+position:absolute;
+right:0px;
+background:#000;
+border:0px;
+color:#fff;
+padding:15px 15px;
+font-weight:bold;
+}
+
+.modalContent button:hover{
+background:#fff;
+color:#000;
+cursor:pointer;
+}
+
+.modalContent img{
+display:block;
+max-width:100%;
+max-height:100%;
+}
+
+
+
+.modalContent .caption{
+bottom:0px;
+left:0px;
+position:absolute;
+z-index:40;
+display:block;
+background:#ff0000;
+color:#fff;
+padding:15px;
+font-family:'Roboto';
+box-shadow: 0px 1px 15px rgba(0,0,0,0.75);
+}
