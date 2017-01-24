@@ -6,16 +6,23 @@
 
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="style.css"rel="stylesheet">
+<link href="landlordBillingCalculator.css"rel="stylesheet">
 
 <script src="https://code.jquery.com/jquery-1.7.1.min.js" integrity="sha256-iBcUE/x23aI6syuqF7EeT/+JFBxjPs5zeFJEXxumwb0=" crossorigin="anonymous"></script>
 <script src="http://www.seattle.gov/util/warp/Scripts/jquery-ui-1.8.11.min.js"></script>
 <script src="script.js"></script>
+<style>
+	h1 {
+		font-family: 'Roboto';
+		font-weight:100;
+		font-size:40px;
+	}
+</style>
 
-<title>Partial Billing Cycle Calculator</title>
+<title>Landlord Billing Calculator</title>
 </head>
 <body>
-<h1>Partial Billing Calculator</h1>
+<h1>Landlord Billing Calculator</h1>
 
 
 <div class="helpModal">
@@ -41,12 +48,6 @@
 	<div class="stepWrapper">
 		<div class="steps">
 			<div id="step1" class="step">
-				<div class="stepHeader">
-					<button class="previous">
-						<i class="material-icons">arrow_back</i>
-					</button>
-					<h2>Step 1</h2>
-				</div>
 				<div class="stepBody">
 					<p class="instructions">
 						Please enter the total amount due
@@ -64,18 +65,12 @@
 						<input id="totalDue" type="text" placeholder="0.0" />
 						<button class="next">
 							<span>next</span>
-							<i class="material-icons" hidden>chevron_right</i>
+							<span class="material-icons" hidden>chevron_right</span>
 						</button>
 					</div>
 				</div>
 			</div>
 			<div id="step2" class="step">
-				<div class="stepHeader">
-					<button class="previous">
-						<i class="material-icons">arrow_back</i>
-					</button>
-					<h2>Step 2</h2>
-				</div>
 				<div class="stepBody">
 					<p class="instructions">
 						Please enter the total days of service
@@ -93,18 +88,12 @@
 
 						<button class="next">
 							<span>next</span>
-							<i class="material-icons" hidden>chevron_right</i>
+							<span class="material-icons" hidden>chevron_right</span>
 						</button>
 					</div>
 				</div>
 			</div>
 			<div id="step3" class="step">
-				<div class="stepHeader">
-					<button class="previous">
-						<i class="material-icons">arrow_back</i>
-					</button>
-					<h2>Step 3</h2>
-				</div>
 				<div class="stepBody">
 					<p class="instructions">
 						How many days did your tenant stay?
@@ -123,26 +112,22 @@
 						<input id="partialDays" type="text" placeholder="0"  />
 						<button class="next">
 							<span>next</span>
-							<i class="material-icons" hidden>chevron_right</i>
+							<span class="material-icons" hidden>chevron_right</span>
 						</button>
 					</div>
 				</div>
 			</div>
 			<div id="stepTotal" class="step">
-				<div class="stepHeader">
-					<button class="previous">
-						<i class="material-icons">arrow_back</i>
-					</button>
-					<h2>Estimation</h2>
-				</div>
 				<div class="stepBody">
 					<p class="instructions">The estimated partial bill is:
 					</p>
 					<span class="amountDue"></span>
-					<button class="reset">
-						<span>reset</span>
-						<i class="material-icons" hidden>refresh</i>
-					</button>
+					<div class="formElements">
+						<button class="reset">
+							<span>reset</span>
+							<span class="material-icons" hidden>refresh</span>
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

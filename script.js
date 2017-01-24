@@ -92,34 +92,18 @@ $(function(){
 	});	
 });
 
-function costPerDay() {
+var costPerDay = function() {
 	totalDue = parseFloat($('#totalDue').val()) || 0.0;
 	serviceDays = parseFloat($('#serviceDays').val()) || 0.0;
 
 	return totalDue/serviceDays;
 }
 
-function amountDue() {
+var amountDue = function() {
 	var dayRate = costPerDay();
 	partialDays = parseFloat($('#partialDays').val()) || 0.0;
 
 	var partialDue = dayRate * partialDays;
 
 	return partialDue.toFixed(2);
-}
-
-function resetCalculator () {
-
-}
-
-function isNumerical() {
-
-}
-
-function previousSlide() {
-
-}
-
-function nextSlide() {
-
 }
