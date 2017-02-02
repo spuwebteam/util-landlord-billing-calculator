@@ -38,16 +38,9 @@ $(function(){
 		$('.helpModal').fadeIn();
 	});
 
-	$('.step input').focusout(function(){
-		inputValue = $(this).val(); 
-		if (inputValue.length > 0){
-			numValue = parseFloat(inputValue) || 0.0;
-			if (numValue != 0.0) {
-				//console.log(numValue);
-			} else {
-				//console.log('You can only enter numbers higher than zero.');
-			}
-		}
+	$('#totalDue').focusout(function(){
+		var userInput = parseFloat( $(this).val() ) || 0.0;
+		$(this).val(userInput.toFixed(2));
 	});
 
 	$('.step button.next').click(function() {
@@ -65,14 +58,14 @@ $(function(){
 				$('.amountDue').text('$ ' + amountDue());
 			}
 			$('.step').removeClass('active');
-			$('.progressBar .step:eq('+ $step.index() +')').addClass('active');
+			$('.progressBar .step:eq('+ ($step.index() + 1) +')').addClass('active');
 			$step.next('.step').toggle('slide', {direction:'right'}, 300);
 			$step.toggle('slide', {direction:'left'}, 300); 
 			$('.stepIndicator').css('left', progressPosition + '%');
 		} else {
 			console.log('yo, you need input');
 			$error.find('.errorMessage')
-				  .text('You must enter a number greater than 0.');
+					.text('You must enter a number greater than 0.');
 			$error.fadeIn();
 		}
 	});	
@@ -89,6 +82,8 @@ $(function(){
 		$('#step1').toggle('slide', {direction:'left'}, 300);
 		$parentStep.toggle('slide', {direction:'right'}, 300); 
 		$('.stepIndicator').css('left', '0px');
+		$('.step').removeClass('active');
+		$('.progressBar .step:eq(0)').addClass('active');
 	});	
 });
 

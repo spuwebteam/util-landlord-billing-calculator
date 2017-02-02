@@ -1,3 +1,5 @@
+$font:'Arial';
+
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -10,206 +12,224 @@
 #partialBillingCalculator {
 	max-width: 580px;
 	position: relative;
-}
-.progressBar {
-	font-family: 'Roboto';
-	background: #000;
-	color: #fff;
-	margin-bottom: 0px;
-	padding: 10px 0px;
-	overflow: hidden;
 
-	.stepIndicator {
-		position: absolute;
-		bottom: 0px;
-		width: 25%;
-		height: 4px;
-		left: 0%;
-		transition: all .6s;
+	.progressBar {
+		font-family: $font;
+		background: #000;
+		color: #fff;
+		margin-bottom: 0px;
+		padding: 10px 0px;
+		overflow: hidden;
 
-		&:after {
-			content: '';
+		.stepIndicator {
+			position: absolute;
+			bottom: 0px;
+			width: 25%;
+			height: 4px;
+			left: 0%;
+			transition: all .6s;
+
+			&:after {
+				content: '';
+				display: block;
+				background: #4CAF50;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.step {
+			width: 15%;
+			color: #ccc;
+			padding: 4px 5%;
 			display: block;
-			background: #4CAF50;
+			float: left;
+			text-align: center;
+			position: relative;
+			transition: all 2s;
+			font-size: 11pt;
+
+			@media (min-width: 768px) {
+				font-size:12pt;
+				
+			}
+
+			&.active {
+				font-weight: bold;
+				color: #fff;
+			}
+			&:last-child:after {
+				display: none;
+			}
+		}
+	}
+
+	.stepWrapper {
+		position: relative;
+
+		.step {
+			margin-bottom: 20px;
+			box-shadow: 0px 1px 5px rgba(0,0,0,0.5);
 			position: absolute;
 			width: 100%;
-			height: 100%;
-		}
-	}
-	.step {
-		width: 25%;
-		color: #ccc;
-		padding: 4px 0px;
-		display: block;
-		float: left;
-		text-align: center;
-		position: relative;
-		transition: all 2s;
-		font-size: 12pt;
+			background: #fff;
 
-		&.active {
-			font-weight: bold;
-			color: #fff;
-		}
-		&:last-child:after {
-			display: none;
-		}
-	}
-}
-
-.stepWrapper {
-	position: relative;
-
-	.step {
-		margin-bottom: 20px;
-		box-shadow: 0px 1px 5px rgba(0,0,0,0.5);
-		position: absolute;
-		width: 100%;
-		background: #fff;
-
-		&#step2,
-		&#step3,
-		&#stepTotal {
-			display: none;	
-		}
-		button {
-			cursor: pointer;
-		}
-		.stepBody {
-			padding: 1px 20px 20px 20px;
-			border-top: 0px;
-
-			.instructions {
-				font-family: 'Roboto';
-				font-size: 15pt;
-				font-weight: 300;
-				color: #000;
-
-				button.help {
-					border: 0px;
-					width: 24px;
-					height: 24px;
-					line-height: 24px;
-					font-size: 15px;
-					font-weight: bold;
-					text-align: center;
-					color: #fff;
-					background: #ccc;
-					display: inline-block;
-					border-radius: 50px;
-					margin-left: 5px;
-
-					&:hover {
-						background: #000;
-					}
-				}
+			&#step2,
+			&#step3,
+			&#stepTotal {
+				display: none;	
 			}
-			.errorWrapper {
-				display: none;
-				margin: -15px 0px 10px 0px;
-
-				.errorMessage {
-					display: inline-block;
-					font-family: 'Roboto';
-					font-size: 11pt;
-					font-weight: 500;
-					color: #B71C1C;
-					border: 1px solid;
-					padding: 3px 10px 3px 33px;
-					margin-right: 100px;
-
-					&:before {
-						content: '!';
-						background: #B71C1C;
-						color: #fff;
-						display: inline-block;
-						position: absolute;
-						padding: 3px 10px;
-						margin: -3px -33px;
-					}	
-				}
+			button {
+				cursor: pointer;
 			}
-			.formElements {
-				display: flex;
+			.stepBody {
+				padding: 1px 20px 20px 20px;
+				border-top: 0px;
 
-				label {
-					width: 1px;
-					height: 1px;
-					display: block;
-					position: absolute;
-					overflow: hidden;
-				}
-				.unit {
-					 position: absolute;
-					 height: 24px;
-					 font-family: 'Roboto';
-					 font-size: 20px;
-					 color: #777;
-					 margin-top: 5px;
-				}
-				input {
-					height: 24px;
-					padding: 6px 12px;
-					font-size: 14px;
-					line-height: 1.42857143;
+				.instructions {
+					font-family: $font;
+					
+					font-weight: 300;
 					color: #000;
-					background-color: #fff;
-					background-image: none;
-					border: 0px;
-					border-bottom: 2px solid #666;
-					border-radius: 0px;
-					width: 100%;
-					font-size: 20px;
-					margin-right: 22px;
 
-					&#totalDue {
-				    	padding-left: 15px;
+					@media (min-width:544px) {
+						font-size: 15pt;
+					}
+
+					button.help {
+						border: 0px;
+						width: 24px;
+						height: 24px;
+						line-height: 24px;
+						font-size: 15px;
+						font-weight: bold;
+						text-align: center;
+						color: #fff;
+						background: #ccc;
+						display: inline-block;
+						border-radius: 50px;
+						margin-left: 5px;
+
+						&:hover {
+							background: #000;
+						}
 					}
 				}
-				button {
-					height: 40px;
-					width: 110px;
-					border: 0px;
-					padding: 0px 10px 0px 13px;
-					clear: both;
-					border-radius: 2px;
-					background: #039BE5;
-					color: #fff;
-					box-shadow: 0px 1px 1px rgba(0,0,0,.75);
+				.errorWrapper {
+					display: none;
+					margin: -15px 0px 10px 0px;
 
-					&.reset {
-					    background: #333;
-					    width: 100px;
-					    position: absolute;
-					    bottom: 20px;
-					    right: 20px;
+					.errorMessage {
+						display: inline-block;
+						font-family: $font;
+						font-size: 11pt;
+						font-weight: 500;
+						color: #B71C1C;
+						border: 1px solid;
+						padding: 3px 10px 3px 33px;
+						//margin-right: 100px;
+
+						&:before {
+							content: '!';
+							background: #B71C1C;
+							color: #fff;
+							display: inline-block;
+							position: absolute;
+							padding: 3px 10px;
+							margin: -3px -33px;
+						}	
 					}
-					&:hover {
-						background: #0277BD;
+				}
+				.formElements {
+					display: table;
+
+					label {
+						width: 1px;
+						height: 1px;
+						display: block;
+						position: absolute;
+						overflow: hidden;
 					}
-					* {
-					    height: 40px;
-			            line-height: 40px;
-			            display: block;
+					.unit {
+						 position: absolute;
+						 height: 24px;
+						 font-family: $font;
+						 font-size: 20px;
+						 color: #777;
+						 margin-top: 5px;
 					}
-					span:first-child {
-			            float: left;
-			            font-size: 18px;
+					input {
+						height: 24px;
+						padding: 6px 12px;
+						font-size: 14px;
+						line-height: 1.42857143;
+						color: #000;
+						background-color: #fff;
+						background-image: none;
+						border: 0px;
+						border-bottom: 2px solid #666;
+						border-radius: 0px;
+						width: 60px;
+						font-size: 20px;
+						margin-right: 22px;
+
+						&#totalDue {
+					    	padding-left: 15px;
+						}
 					}
-					span:last-child {
-			            float: right;
+					button {
+						float: right;
+						display: block;
+						//margin-top:20px;
+						height: 40px;
+						width: 90px;
+						border: 0px;
+						padding: 0px 10px 0px 13px;
+						clear: both;
+						border-radius: 2px;
+						background: #286ee5;
+						color: #fff;
+						box-shadow: 0px 1px 1px rgba(0,0,0,.75);
+
+						&.reset {
+						    background: #333;
+						    width: 100px;
+						    position: absolute;
+						    bottom: 20px;
+						    right: 20px;
+						}
+						&:hover {
+							background: #1d3aed;
+						}
+						* {
+						    height: 40px;
+				            line-height: 40px;
+				            display: block;
+						}
+						span:first-child {
+				            float: left;
+				            font-size: 18px;
+						}
+						span:last-child {
+				            float: right;
+						}
 					}
 				}
 			}
 		}
 	}
-}
 
-.amountDue {
-	font-family: 'Roboto';
-	font-size: 36pt;
-	font-weight: 700;
-	color: #43A047;
+	.amountDue {
+		font-family: $font;
+		font-size: 20pt;
+		font-weight: 700;
+		color: #43A047;
+
+		@media (min-width:768px) {
+			font-size: 36pt;
+		}
+	}
+
 }
 
 .helpModal {
@@ -263,7 +283,7 @@
 			background: #ff0000;
 			color: #fff;
 			padding: 15px;
-			font-family: 'Roboto';
+			font-family: $font;
 			box-shadow: 0px 1px 15px rgba(0,0,0,0.75);
 		}
 	}
