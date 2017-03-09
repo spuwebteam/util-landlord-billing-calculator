@@ -1,4 +1,4 @@
-$font:'Arial';
+$font:'Arial', 'Helvetica';
 
 .sr-only {
 	position: absolute;
@@ -10,24 +10,32 @@ $font:'Arial';
 }
 
 #partialBillingCalculator {
-	max-width: 580px;
-	position: relative;
+    position: relative;
+    padding-bottom: 100px;
+    margin-right: 10px;
+    min-height: 120px;
+    margin-bottom: 100px;
 
 	.progressBar {
 		font-family: $font;
-		background: #000;
-		color: #fff;
+		background: #fff;
+		color: #000;
 		margin-bottom: 0px;
 		padding: 10px 0px;
 		overflow: hidden;
+		border:2px solid #000;
+		border-top:8px solid #000;
+		box-shadow: 0px 1px 5px rgba(0,0,0,0.5);
 
 		.stepIndicator {
 			position: absolute;
-			bottom: 0px;
-			width: 25%;
-			height: 4px;
+			top: 48px;
+			width: 23%;
+			margin-left:1%;
+			height: 6px;
 			left: 0%;
 			transition: all .6s;
+			line-height:0px;
 
 			&:after {
 				content: '';
@@ -35,28 +43,23 @@ $font:'Arial';
 				background: #4CAF50;
 				position: absolute;
 				width: 100%;
-				height: 100%;
+				height: 6px;
 			}
 		}
 		.step {
-			width: 15%;
-			color: #ccc;
-			padding: 4px 5%;
+			width: 21%;
+			height: 18px;
+			color: #bbb;
+			padding: 4px 2%;
 			display: block;
 			float: left;
 			text-align: center;
 			position: relative;
-			transition: all 2s;
-			font-size: 11pt;
-
-			@media (min-width: 768px) {
-				font-size:12pt;
-				
-			}
+			font-size: 12pt;
 
 			&.active {
 				font-weight: bold;
-				color: #fff;
+				color: #000;
 			}
 			&:last-child:after {
 				display: none;
@@ -83,35 +86,29 @@ $font:'Arial';
 				cursor: pointer;
 			}
 			.stepBody {
-				padding: 1px 20px 20px 20px;
+				padding: 20px 30px 40px 30px;
 				border-top: 0px;
 
 				.instructions {
 					font-family: $font;
-					
-					font-weight: 300;
+					font-weight: 600;
 					color: #000;
-
-					@media (min-width:544px) {
-						font-size: 15pt;
-					}
+					font-size: 18px;
 
 					button.help {
 						border: 0px;
-						width: 24px;
-						height: 24px;
 						line-height: 24px;
-						font-size: 15px;
-						font-weight: bold;
+						font-size: 14px;
 						text-align: center;
-						color: #fff;
-						background: #ccc;
-						display: inline-block;
-						border-radius: 50px;
-						margin-left: 5px;
+						text-decoration: underline;
+						color: #286ee5;
+						background:transparent;
+						display: block;
+						padding:0px;
 
 						&:hover {
-							background: #000;
+							background: #286ee5;
+							color: #fff;
 						}
 					}
 				}
@@ -172,24 +169,25 @@ $font:'Arial';
 						width: 60px;
 						font-size: 20px;
 						margin-right: 22px;
-
+						&:focus {
+							border-bottom: 4px solid #286ee5;
+						}
 						&#totalDue {
 					    	padding-left: 15px;
 						}
 					}
 					button {
 						float: right;
-						display: block;
-						//margin-top:20px;
+						display: inline-block;
 						height: 40px;
-						width: 90px;
 						border: 0px;
-						padding: 0px 10px 0px 13px;
-						clear: both;
-						border-radius: 2px;
+						padding: 0px 20px;
+						border-radius: 8px;
 						background: #286ee5;
 						color: #fff;
 						box-shadow: 0px 1px 1px rgba(0,0,0,.75);
+						font-size: 16px;
+						font-weight: bold;
 
 						&.reset {
 						    background: #333;
@@ -201,18 +199,6 @@ $font:'Arial';
 						&:hover {
 							background: #1d3aed;
 						}
-						* {
-						    height: 40px;
-				            line-height: 40px;
-				            display: block;
-						}
-						span:first-child {
-				            float: left;
-				            font-size: 18px;
-						}
-						span:last-child {
-				            float: right;
-						}
 					}
 				}
 			}
@@ -221,7 +207,7 @@ $font:'Arial';
 
 	.amountDue {
 		font-family: $font;
-		font-size: 20pt;
+		font-size: 30pt;
 		font-weight: 700;
 		color: #43A047;
 
@@ -240,7 +226,7 @@ $font:'Arial';
 	height: 100%;
 	top: 0px;
 	left: 0px;
-	z-index: 30;
+	z-index: 150;
 	text-align: center;
 
 	.modalContent {

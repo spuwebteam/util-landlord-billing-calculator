@@ -23,8 +23,6 @@
 </head>
 <body>
 <h1>Landlord Billing Calculator</h1>
-
-
 <div class="helpModal">
 	<div class="modalContent">
 		<button><span>close</span></button>
@@ -35,10 +33,10 @@
 		<span class="caption step2">This is the amount of days between these 2 dates.</span>
 	</div>
 </div>
-<section id="partialBillingCalculator">
+<div id="partialBillingCalculator">
 	<div class="progressBar">
 		<div class="steps">
-			<span class='stepIndicator'></span>
+			<span class='stepIndicator'>&nbsp;</span>
 			<span class="step active" data-step="step1">Step 1</span>
 			<span class="step" data-step="step2">Step 2</span>
 			<span class="step" data-step="step3">Step 3</span>
@@ -50,22 +48,21 @@
 			<div id="step1" class="step">
 				<div class="stepBody">
 					<p class="instructions">
-						Please enter the total amount due
+						Enter the total amount due
 						<button class="help">
-							<span class="sr-only">help</span>
-							<span>?</span>
+							<span class="sr-only">Help</span>
+							<span>Find this on bill</span>
 						</button>
 					</p>
 					<div class="errorWrapper">
-						<span class="errorMessage"></span>
+						<span class="errorMessage">&nbsp;</span>
 					</div>
 					<div class="formElements">
 						<label for="totalDue">Total Amount Due</label>
 						<span class="unit">$</span>
 						<input id="totalDue" type="text" placeholder="0.00" />
 						<button class="next">
-							<span>next</span>
-							<span class="material-icons" hidden>chevron_right</span>
+							<span>Continue</span>
 						</button>
 					</div>
 				</div>
@@ -73,22 +70,20 @@
 			<div id="step2" class="step">
 				<div class="stepBody">
 					<p class="instructions">
-						Please enter the total days of service
+						Enter the total days of service
 						<button class="help">
-							<span class="sr-only">help</span>
-							<span>?</span>
+							<span class="sr-only">Help</span>
+							<span>Find this on bill</span>
 						</button>
 					</p>
 					<div class="errorWrapper">
-						<span class="errorMessage"></span>
+						<span class="errorMessage">&nbsp;</span>
 					</div>
 					<div class="formElements">	
 						<label for="serviceDays">Total Days of Service</label>
 						<input id="serviceDays" type="text" placeholder="0"  />
-
 						<button class="next">
-							<span>next</span>
-							<span class="material-icons" hidden>chevron_right</span>
+							<span>Continue</span>
 						</button>
 					</div>
 				</div>
@@ -97,42 +92,35 @@
 				<div class="stepBody">
 					<p class="instructions">
 						How many days did your tenant stay?
-						<!--
-						<button class="help">
-							<span class="sr-only">help</span>
-							<span>?</span>
-						</button>
-						-->
 					</p>
 					<div class="errorWrapper">
-						<span class="errorMessage"></span>
+						<span class="errorMessage">&nbsp;</span>
 					</div>
 					<div class="formElements">
 						<label for="partialDays">Number of Days in Partial</label>
 						<input id="partialDays" type="text" placeholder="0"  />
 						<button class="next">
-							<span>next</span>
-							<span class="material-icons" hidden>chevron_right</span>
+							<span>Continue</span>
 						</button>
 					</div>
 				</div>
 			</div>
 			<div id="stepTotal" class="step">
 				<div class="stepBody">
-					<p class="instructions">The estimated partial bill is:
+					<p class="instructions">
+						The estimated partial bill is:
 					</p>
-					<span class="amountDue"></span>
+					<span class="amountDue">&nbsp;</span>
 					<div class="formElements">
 						<button class="reset">
-							<span>reset</span>
-							<span class="material-icons" hidden>refresh</span>
+							<span>Reset</span>
 						</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</section> 
+</div> 
 
 </body>
 </html>
